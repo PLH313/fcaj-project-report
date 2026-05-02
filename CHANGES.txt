@@ -1,0 +1,1 @@
+/layouts/shortcodes/ghcontributors - Fixed in order to run Hugo
