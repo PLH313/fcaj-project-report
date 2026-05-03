@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1.5. </b> "
 ---
 
-### Week 5 Goals:
+### Week 5 Objectives:
 
 * Design, build, and secure a fully Serverless document management system on AWS.
 * Optimize performance, security, and distribution speed for web applications.
 * Implement core Event-driven data processing flows for the "Log Management System" project.
 
-### Tasks Implemented This Week:
+### Tasks implemented this week:
 
 | No. | Task | Start Date | End Date | Resource |
 | :--- | :--- | :---: | :---: | :--- |
