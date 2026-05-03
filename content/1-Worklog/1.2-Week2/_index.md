@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-### Week 2 Goals:
+### Week 2 Objectives:
 
 * Deep dive into implementation, monitoring, and automation on the AWS platform.
 * Practice architectural scaling and managing diverse database types (SQL & NoSQL).
 * Become familiar with application containerization and advanced network configurations.
 
-### Tasks Implemented This Week:
+### Tasks implemented this week:
 
 | No. | Tasks | Start Date | End Date | Resource |
 | :--- | :--- | :---: | :---: | :--- |
