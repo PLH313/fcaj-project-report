@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-### Week 6 Goals:
+### Week 6 Objectives:
 
 * Focus on researching and practicing advanced security and identity management solutions on AWS.
 * Continue developing and optimizing data processing modules for the "Log Management System" project.
 * Perform internal integration testing to ensure the stability of core data flows.
 
-### Tasks Implemented This Week:
+### Tasks implemented this week:
 
 | No. | Task | Start Date | End Date | Resource |
 | :--- | :--- | :---: | :---: | :--- |
