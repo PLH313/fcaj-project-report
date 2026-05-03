@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1.3. </b> "
 ---
 
-### Week 3 Goals:
+### Week 3 Objectives:
 
 * Focus on optimizing application performance through caching and content delivery solutions.
 * Expand advanced network infrastructure and implement centralized system management solutions.
 * Explore advanced Infrastructure as Code (IaC) features in preparation for the group project.
 
-### Tasks Implemented This Week:
+### Tasks implemented this week:
 
 | No. | Tasks | Start Date | End Date | Resource |
 | :--- | :--- | :---: | :---: | :--- |
