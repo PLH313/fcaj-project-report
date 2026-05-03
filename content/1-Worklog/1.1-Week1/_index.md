@@ -22,7 +22,7 @@ pre: " <b> 1.1. </b> "
 | 4 | - Research: Amazon VPC architectural components (Subnets, IGW, NAT Gateway, Route Table). <br> - **Hands-on:** <br> &nbsp;&nbsp;+ Design VPC: Configure Public/Private Subnets. <br> &nbsp;&nbsp;+ Establish Security Group shields. <br> &nbsp;&nbsp;+ Simulate a secure Site-to-Site VPN connection. | 03/12/2026 | 03/13/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com) |
 | 5 | - Research: EC2 services (Instance Types, AMI, EBS) and security Best Practices. <br> - **Project Hands-on (Log Management):** <br> &nbsp;&nbsp;+ Deploy EC2 servers (Linux & Windows). <br> &nbsp;&nbsp;+ Install LAMP stack and Node.js applications. <br> &nbsp;&nbsp;+ Attach IAM Roles to EC2 for secure S3 access without Access Keys. | 03/13/2026 | 03/13/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com) |
 
----
+
 
 ### Key Achievements in Week 1:
 
@@ -44,7 +44,7 @@ pre: " <b> 1.1. </b> "
 * Applied security **Best Practices**: Used IAM Roles attached directly to EC2 instances to allow applications to access S3 automatically, completely eliminating the risk of exposing Access Keys/Secret Keys in the source code.
 * Became proficient in using the **AWS Cloud9** development environment and the Command Line Interface (CLI) to query and manage resources.
 
----
+
 
 ### Knowledge Gained:
 
