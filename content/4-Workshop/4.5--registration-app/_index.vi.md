@@ -6,90 +6,47 @@ chapter: false
 pre: " <b> 4.5. </b> "
 ---
 
-Khi bạn tạo một Interface Endpoint  hoặc cổng, bạn có thể đính kèm một chính sách điểm cuối để kiểm soát quyền truy cập vào dịch vụ mà bạn đang kết nối. Chính sách VPC Endpoint là chính sách tài nguyên IAM mà bạn đính kèm vào điểm cuối. Nếu bạn không đính kèm chính sách khi tạo điểm cuối, thì AWS sẽ đính kèm chính sách mặc định cho bạn để cho phép toàn quyền truy cập vào dịch vụ thông qua điểm cuối.
+## 4.5. Hệ thống đăng ký người dùng
 
-Bạn có thể tạo chính sách chỉ hạn chế quyền truy cập vào các S3 bucket cụ thể. Điều này hữu ích nếu bạn chỉ muốn một số Bộ chứa S3 nhất định có thể truy cập được thông qua điểm cuối.
+### Nội dung:
+1.  [Kiểm tra hạ tầng cổng đăng ký](4.5.1--resource-check/)
+2.  [Kiểm thử thực tế cổng đăng ký](4.5.2--registration-test/)
+3.  [Kiểm thử truy vấn toàn diện](4.5.3--query-test/)
 
-Trong phần này, bạn sẽ tạo chính sách VPC Endpoint hạn chế quyền truy cập vào S3 bucket được chỉ định trong chính sách VPC Endpoint.
+### Mục tiêu
+Cung cấp một cơ chế an toàn và tập trung để đăng ký ứng dụng và người dùng, đảm bảo rằng chỉ các thực thể đã được xác thực mới có thể truy cập vào quy trình quản lý nhật ký.
 
-![endpoint diagram](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
+### Kiến trúc
+Hệ thống đăng ký được xây dựng trên **Amazon Cognito, IAM, ECS và DynamoDB**.
 
-#### Kết nối tới EC2 và xác minh kết nối tới S3. 
+- **Cognito** quản lý việc đăng ký và xác thực người dùng.
 
-1. Bắt đầu một phiên AWS Session Manager mới trên máy chủ có tên là Test-Gateway-Endpoint. Từ phiên này, xác minh rằng bạn có thể liệt kê nội dung của bucket mà bạn đã tạo trong Phần 1: Truy cập S3 từ VPC.
+- **IAM** thực thi quyền truy cập dựa trên vai trò và tạo ra các khóa truy cập an toàn.
 
-```
-aws s3 ls s3://<your-bucket-name>
-```
-![test](/images/5-Workshop/5.5-Policy/test1.png)
+- **ECS** lưu trữ Ứng dụng Đăng ký, cung cấp API để đăng ký ứng dụng mới.
 
-Nội dung của bucket bao gồm hai tệp có dung lượng 1GB đã được tải lên trước đó.
+- **DynamoDB** lưu trữ siêu dữ liệu về các ứng dụng và người dùng đã đăng ký.
 
-2. Tạo một bucket S3 mới; tuân thủ mẫu đặt tên mà bạn đã sử dụng trong Phần 1, nhưng thêm '-2' vào tên. Để các trường khác là mặc định và nhấp vào **Create**.
+### Mô tả Kiến trúc
+Các ứng dụng tương tác với **Ứng dụng Đăng ký (ECS)** để gửi yêu cầu đăng ký. Quy trình làm việc như sau:
+1. Ứng dụng gọi API đăng ký.
 
-![create bucket](/images/5-Workshop/5.5-Policy/create-bucket.png)
+2. Cognito xác thực danh tính người dùng và kích hoạt xác nhận qua email.
 
-3. Tạo bucket thành công.
+3. Sau khi được xác nhận, IAM tự động cấp cho người dùng mới các khóa truy cập và chính sách. 4. Ứng dụng được ghi lại trong **bảng AppClients trên DynamoDB**, đảm bảo khả năng truy vết và tích hợp với quy trình phân tích.
 
-![Success](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
+5. Người dùng đã đăng ký được cấp quyền đẩy nhật ký vào **CloudWatch Logs**, cho phép nhập dữ liệu liền mạch vào quy trình.
 
-Policy mặc định cho phép truy cập vào tất cả các S3 Buckets thông qua VPC endpoint.
+### Vai trò của ứng dụng đăng ký
+- Cung cấp các điểm cuối API để đăng ký ứng dụng.
 
-4. Trong giao diện **Edit Policy**, sao chép và dán theo policy sau, thay thế yourbucketname-2 với tên bucket thứ hai của bạn. Policy này sẽ cho phép truy cập đến bucket mới thông qua VPC endpoint, nhưng không cho phép truy cập đến các bucket còn lại. Chọn **Save** để kích hoạt policy.
+- Xác thực danh tính người dùng thông qua Cognito và xác nhận email.
 
+- Tự động tạo người dùng IAM và cấp phát khóa truy cập.
 
-```
-{
-  "Id": "Policy1631305502445",
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1631305501021",
-      "Action": "s3:*",
-      "Effect": "Allow",
-      "Resource": [
-      				"arn:aws:s3:::yourbucketname-2",
-       				"arn:aws:s3:::yourbucketname-2/*"
-       ],
-      "Principal": "*"
-    }
-  ]
-}
-```
+- Lưu trữ siêu dữ liệu ứng dụng trong DynamoDB cho các truy vấn và phân tích trong tương lai.
 
-![custom policy](/images/5-Workshop/5.5-Policy/policy2.png)
+- Cấp quyền CloudWatch cho các ứng dụng đã đăng ký để chuyển tiếp nhật ký.
 
-Cấu hình policy thành công.
-
-![success](/images/5-Workshop/5.5-Policy/success.png)
-
-5. Từ session của bạn trên Test-Gateway-Endpoint instance, kiểm tra truy cập đến S3 bucket bạn tạo ở bước đầu
-
-```
-aws s3 ls s3://<yourbucketname>
-```
-
-Câu lệnh trả về lỗi bởi vì truy cập vào S3 bucket không có quyền trong VPC endpoint policy.
-
-![error](/images/5-Workshop/5.5-Policy/error.png)
-
-6. Trở lại home directory của bạn trên EC2 instance ```cd~```
-
-+ Tạo file ```fallocate -l 1G test-bucket2.xyz ```
-+ Sao chép file lên bucket thứ  2 ```aws s3 cp test-bucket2.xyz s3://<your-2nd-bucket-name>```
-
-![success](/images/5-Workshop/5.5-Policy/test2.png)
-
-Thao tác này được cho phép bởi VPC endpoint policy.
-
-![success](/images/5-Workshop/5.5-Policy/test2-success.png)
-
-Sau đó chúng ta kiểm tra truy cập vào S3 bucket đầu tiên
-
- ```aws s3 cp test-bucket2.xyz s3://<your-1st-bucket-name>```
-
- ![fail](/images/5-Workshop/5.5-Policy/test2-fail.png)
-
- Câu lệnh xảy ra lỗi bởi vì bucket không có quyền truy cập bởi VPC endpoint policy.
-
-Trong phần này, bạn đã tạo chính sách VPC Endpoint cho Amazon S3 và sử dụng AWS CLI để kiểm tra chính sách. Các hoạt động AWS CLI liên quan đến bucket S3 ban đầu của bạn thất bại vì bạn áp dụng một chính sách chỉ cho phép truy cập đến bucket thứ hai mà bạn đã tạo. Các hoạt động AWS CLI nhắm vào bucket thứ hai của bạn thành công vì chính sách cho phép chúng. Những chính sách này có thể hữu ích trong các tình huống khi bạn cần kiểm soát quyền truy cập vào tài nguyên thông qua VPC Endpoint.
+### Kết quả
+Các ứng dụng và người dùng được đăng ký, xác thực và cấp quyền cần thiết một cách an toàn. Hệ thống đảm bảo rằng chỉ các thực thể đã được xác thực mới có thể gửi nhật ký vào quy trình và truy vấn phân tích, do đó duy trì **tính bảo mật, khả năng mở rộng và độ tin cậy** trên toàn bộ hệ sinh thái quản lý nhật ký.
