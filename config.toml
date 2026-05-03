@@ -1,7 +1,7 @@
 baseURL = "https://plh313.github.io/fcaj-project-report/"
 relativeURLs = true
 canonifyURLs = true
-defaultContentLanguage = "vi"
+defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
