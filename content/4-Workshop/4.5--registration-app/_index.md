@@ -18,7 +18,7 @@ Provide a secure and centralized mechanism for registering applications and user
 
 ### Architecture  
 The registration system is built on **Amazon Cognito, IAM, ECS, and DynamoDB**.  
-- **Cognito** manages user registration and authentication.  
+- **Amazon Cognito** manages user registration and authentication.  
 - **IAM** enforces role-based access and generates secure access keys.  
 - **ECS** hosts the Registration App, exposing APIs for new application registration.  
 - **DynamoDB** stores metadata about registered applications and users.  
