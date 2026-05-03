@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.5. </b> "
 ---
 
-## 4.5. Hệ thống đăng ký người dùng
+## Hệ thống đăng ký người dùng
 
 ### Nội dung:
 1.  [Kiểm tra hạ tầng cổng đăng ký](4.5.1--resource-check/)
