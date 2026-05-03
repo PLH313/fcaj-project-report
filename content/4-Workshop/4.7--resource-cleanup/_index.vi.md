@@ -5,7 +5,7 @@ weight: 7
 chapter: false
 pre: " <b> 4.7. </b> "
 ---
-### 4.7 Thu hồi tài nguyên
+### Thu hồi tài nguyên
 - Việc dọn dẹp tài nguyên sau khi hoàn thành workshop là rất quan trọng nếu bạn không muốn bị phát sinh thêm chi phí sử dụng. Các hạ tầng như EC2, VPC và RDS vẫn sẽ tính phí nếu bạn không sử dụng chúng.
 
 #### Dọn dẹp
