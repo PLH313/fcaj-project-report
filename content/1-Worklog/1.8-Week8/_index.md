@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1.8. </b> "
 ---
 
-### Week 8 Goals:
+### Week 8 Objectives:
 
 * Finalize security architecture and user authentication for the entire project system.
 * Implement identity management solutions and secure application interfaces.
 * Conduct comprehensive End-to-End system testing and package the final internship report.
 
-### Tasks Implemented This Week:
+### Tasks implemented this week:
 
 | No. | Task | Start Date | End Date | Resource |
 | :--- | :--- | :---: | :---: | :--- |
