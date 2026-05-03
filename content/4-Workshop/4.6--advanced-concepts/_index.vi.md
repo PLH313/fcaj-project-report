@@ -5,7 +5,7 @@ weight: 6
 chapter: false
 pre: " <b> 4.6 </b> "
 ---
-## 4.6 XỬ LÝ LOG THỜI GIAN THỰC VỚI AMAZON KINESIS
+XỬ LÝ LOG THỜI GIAN THỰC VỚI AMAZON KINESIS
 
 ### 1. Đề xuất nghiên cứu mở rộng
 - Do giới hạn về thời gian trong khuôn khổ kỳ thực tập và ưu tiên tính ổn định của hạ tầng cốt lõi, phần này được trình bày như một đề xuất nghiên cứu nâng cao. Mục tiêu là nâng cấp luồng dữ liệu từ xử lý theo đợt (*Batch Processing*) sang xử lý luồng thời gian thực (*Streaming Processing*) để tối ưu hóa khả năng phản ứng của hệ thống.
