@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-# Harvesting "AWS First Cloud AI Journey Community Day 2026"
+# Report on "AWS First Cloud AI Journey Community Day 2026"
 
 ### Event Purpose
 
