@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-### Week 4 Goals:
+### Week 4 Objectives:
 
 * Focus on monitoring solutions and server system cost optimization.
 * Practice application packaging and deployment using Container technology.
 * Finalize the topic and build the core architecture for the "Log Management System" project.
 
-### Tasks Implemented This Week:
+### Tasks implemented this week:
 
 | No. | Task | Start Date | End Date | Resource |
 | :--- | :--- | :---: | :---: | :--- |
