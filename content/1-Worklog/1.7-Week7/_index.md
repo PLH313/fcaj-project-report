@@ -25,7 +25,7 @@ pre: " <b> 1.7. </b> "
 
 
 
-### Week 7 Outcomes:
+### Key Achievements in Week 7:
 
 #### 1. Advanced System Architecture
 * Successfully transitioned from a traditional log collection model to a distributed Serverless architecture, utilizing SQS FIFO queues to guarantee message ordering and system load capacity.
