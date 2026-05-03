@@ -68,12 +68,12 @@ Pipeline sử dụng kiến trúc AWS serverless hoàn chỉnh để tập trung
 - *Notifications*: SNS và CloudWatch Alerts cho phát hiện anomalies.
 
 ### 5. Lộ trình & Mốc triển khai
-- *Trước thực tập (Tuần 0)*: 1 tuần cho việc lập kế hoạch và xem xét phương pháp thu thập logs hiện tại.
-- *Thực tập (8 tuần)*:
-    - Tuần 1-2: Nghiên cứu dịch vụ AWS và cấu hình CloudWatch Agents cho applications.
-    - Tuần 3-6: Thiết kế và điều chỉnh pipeline architecture, tích hợp Lambda, SQS, DynamoDB, và S3.
+- *Trước triển khai (Tuần 1-2)*: 2 tuần cho việc lập kế hoạch và xem xét phương pháp thu thập logs hiện tại.
+- *Triển khai (Tuần 3-8)*:
+    - Tuần 3-4: Nghiên cứu dịch vụ AWS và cấu hình CloudWatch Agents cho applications.
+    - Tuần 5-6: Thiết kế và điều chỉnh pipeline architecture, tích hợp Lambda, SQS, DynamoDB, và S3.
     - Tuần 7-8: Triển khai, kiểm thử, và khởi chạy hệ thống đầy đủ với Glue jobs và Athena queries.
- - *Sau triển khai*: Tối ưu hóa, giám sát, và mở rộng ingestion logs trong vòng 1 năm.
+- *Sau triển khai*: Tối ưu hóa, giám sát, và mở rộng ingestion logs trong vòng 1 năm.
 
 ### 6. Ước tính ngân sách
 Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).

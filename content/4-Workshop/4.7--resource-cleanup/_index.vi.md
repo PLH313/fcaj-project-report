@@ -11,17 +11,27 @@ pre: " <b> 4.7. </b> "
 #### Dọn dẹp
 - Vì toàn bộ hạ tầng được triển khai bằng Terraform, nên việc dọn dẹp chúng là rất đơn giản và an toàn.
 1. Mở Terminal (bằng Command Prompt, Windows PowerShell hoặc VS Code) tại thư mục gốc chứa các file cấu hình của dự án (có phần mở rộng là .tf).
-2. Gõ lệnh sau: *terraform destroy*.
+2. Gõ lệnh sau: **terraform destroy**.
 4. Terraform sẽ liệt kê danh sách các tài nguyên sẽ bị xoá.
 5. Sau khi liệt kê, Terraform sẽ yêu cầu bạn xác nhận có muốn xoá hay không. Lúc này bạn gõ *yes*.
 6. Chờ cho quá trình dọn dẹp hoàn tất.
 
 #### Lưu ý về S3 Bucket
-- Nếu S3 bucket của bạn còn chứa dữ liệu (log), Terraform sẽ báo lỗi trong lúc dọn dẹp vì AWS không cho xoá bucket không rỗng. Trong trường hợp này:
+- Nếu S3 bucket của bạn còn chứa dữ liệu (log), Terraform sẽ báo lỗi trong lúc dọn dẹp vì AWS không cho xoá bucket không rỗng như hình minh hoạ.
+<img width="1011" height="301" alt="image" src="https://github.com/user-attachments/assets/9f2e11c2-f5fd-49f0-aa4c-34276f8016c2" />
+
+- Trong trường hợp này:
 1. Tại AWS Management Console, bạn điều hướng đến **S3** (gõ S3 vào ô Search), chọn **General purpose bucket**.
 2. Chọn bucket chứa log và nhấn empty.
 3. Ở màn hình xác nhận, gõ *permanently delete*.
-4. Sau khi empty thành công, quay lại terminal và chạy lại lệnh *terraform destroy*.
+4. Sau khi empty thành công, quay lại terminal và chạy lại lệnh **terraform destroy**.
+
+### Lưu ý về IAM User
+- Terraform sẽ không tự xoá IAM User nên phần này chúng ta sẽ xoá thủ công.
+1. Tại AWS Management Console, bạn gõ **IAM** vào ô Search.
+2. Điều hường đến **IAM Users**, chọn user có appId (ví dụ: app_abc123).
+3. Chọn **delete**. Bạn sẽ thấy hộp thoại xác nhận, gõ **confirm** để xác nhận xoá.
+4. Kiểm tra lại IAM User.
 
 #### Kiểm tra lại trên console
 - Sau khi Terraform thông báo hoàn tất (**Destroy complete!**), bạn hãy truy cập vào AWS Management Console để kiểm tra và đảm bảo tất cả các tài nguyên đã được dọn dẹp.

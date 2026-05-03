@@ -17,11 +17,21 @@ pre : " <b> 4.7. </b> "
 5. Wait for the resources to be deleted.
 
 #### Quick note on S3 Buckets
-- If your bucket still contains log data, Terraform will display an error because AWS does not allow the deletion of non-empty buckets. In that case:
+- If your bucket still contains log data, Terraform will display an error because AWS does not allow the deletion of non-empty buckets like the following example.
+<img width="1011" height="301" alt="image" src="https://github.com/user-attachments/assets/5a06b65a-eff6-4f0f-8b8f-f2129ef3c519" />
+
+- In that case:
 1. In the console, go to the **S3 console** (by typing on search bar *S3*).
 2. Select the log bucket and click empty.
 3. In the confirmation screen, type *permanently delete*.
 4. Once the bucket is empty, return to the Terminal and rerun the *terraform destroy* command.
+
+#### Manual IAM User Deletion
+- Note on IAM Users: Terraform will not automatically delete the IAM User, so this step must be performed manually.  
+1. In the AWS Management Console, search for **IAM** in the search bar.
+2. Navigate to **IAM Users**, and select the user with your specific appId (e.g., app_abc123).
+3. Click **Delete**. A confirmation dialog will appear; type **confirm** to finalize the deletion.
+4. Final verification.
 
 #### Final Verification
 - After Terraform reports success (**Destroy complete!**), visit the AWS Management Console to ensure the following key resources have been removed.

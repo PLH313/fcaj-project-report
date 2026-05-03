@@ -43,10 +43,14 @@ Sau khi cấu hình hoàn tất, tiến hành tạo log để mô phỏng dữ l
 ### Mô tả luồng hoạt động
 
 - Log được tạo trong hệ thống và gửi đến CloudWatch  
-- Lambda Shipper được kích hoạt và xử lý log  
-- Dữ liệu được chuyển tiếp vào SQS  
-- Lambda Processor tiếp tục xử lý dữ liệu  
-- Kết quả được lưu vào S3, DynamoDB và gửi thông báo qua Email. 
+- Lambda Shipper được kích hoạt để xử lý và đẩy dữ liệu vào SQS  
+- Lambda Processor lấy dữ liệu từ SQS để tiếp tục xử lý  
+- Kết quả được lưu vào S3, DynamoDB  
+
+- Thông báo được gửi qua SNS (Email Subscription):
+  - Email nhận thông báo phải **subscribe và xác nhận (confirm)** trước  
+  - Nếu chưa xác nhận, SNS sẽ gửi email yêu cầu xác nhận subscription  
+  - Chỉ sau khi confirm, email mới nhận được các thông báo tiếp theo  
 
 ### Kết luận
 

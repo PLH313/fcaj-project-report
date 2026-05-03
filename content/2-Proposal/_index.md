@@ -79,10 +79,10 @@ The pipeline employs a fully serverless AWS architecture to centralize log inges
 
 ### 5. Timeline & Milestones
 **Project Timeline**
-- **Pre‑Implementation (Week 0)**: 1 week for planning and reviewing existing log collection methods.
-- **Implementation (8 weeks)**:
-  - **Week 1-2**: Study AWS services and configure CloudWatch Agents for applications.
-  - **Week 3-6**: Design and adjust the pipeline architecture, integrate Lambda, SQS, DynamoDB, and S3.
+- **Pre‑Implementation (Week 1-2)**: 2 week for planning and reviewing existing log collection methods.
+- **Implementation (Week 3-8)**:
+  - **Week 3-4**: Study AWS services and configure CloudWatch Agents for applications.
+  - **Week 5-6**: Design and adjust the pipeline architecture, integrate Lambda, SQS, DynamoDB, and S3.
   - **Week 7-8**: Implement, test, and launch the full system with Glue jobs and Athena queries.
 - **Post‑Launch**: Up to 1 year for optimization, monitoring, and scaling log ingestion.
 
