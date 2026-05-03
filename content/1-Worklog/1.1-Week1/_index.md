@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1.1. </b> "
 ---
 
-### Week 1 Goals:
+### Week 1 Objectives:
 
 * Research foundational documentation regarding core AWS service architectures.
 * Directly perform hands-on lab sequences to grasp real-world system operational workflows.
 * Establish a secure management environment and optimize costs from the very beginning.
 
-### Tasks Implemented This Week:
+### Tasks implemented this week:
 
 | No. | Task | Start Date | End Date | Resource |
 | :--- | :--- | :---: | :---: | :--- |
