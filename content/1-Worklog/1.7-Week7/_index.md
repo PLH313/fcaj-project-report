@@ -14,16 +14,13 @@ pre: " <b> 1.7. </b> "
 
 ### Tasks implemented this week:
 
-| Task | Start Date | Completion Date | Reference |
-| :--- | :--- | :--- | :--- |
-| - Data Routing Refactoring: Analyzing and transitioning the data flow to use SQS FIFO as a processing buffer. | 20/04/2026 | 20/04/2026 | https://cloudjourney.awsstudygroup.com |
-| - Alert Debounce Logic Research: Building an algorithm to suppress repeated SNS alerts based on time-status queries from DynamoDB. | 21/04/2026 | 21/04/2026 | https://cloudjourney.awsstudygroup.com |
-| - S3 Storage Upgrade: Deploying Hive Partitioning (year/month/day/appid) and researching Athena DDL commands for partition synchronization. | 22/04/2026 | 22/04/2026 | https://cloudjourney.awsstudygroup.com |
-| - API Endpoint Analysis: Reviewing the integration flow between HTTP API Gateway and Lambda for retrieving data for the Client Dashboard. | 23/04/2026 | 23/04/2026 | https://cloudjourney.awsstudygroup.com |
-| - Core Storage Infrastructure Deployment: Configuring S3 buckets with the new partition structure, setting Lifecycle Rules, and creating DynamoDB tables with TTL. | 24/04/2026 | 24/04/2026 | https://cloudjourney.awsstudygroup.com |
-| - SQS and Lambda Integration: Packaging Python source code, configuring SQS as an event trigger, and establishing IAM Roles for system integration. | 24/04/2026 | 24/04/2026 | https://cloudjourney.awsstudygroup.com |
-
-
+| No. | Task | Start Date | End Date | Resource |
+| :--- | :--- | :---: | :---: | :--- |
+| 1 | - **Project:** <br> &nbsp;&nbsp;+ Data Routing Refactoring: Analyzing and transitioning the data flow to use SQS FIFO as a processing buffer. | 04/20/2026 | 04/20/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
+| 2 | - Research: Alert Debounce Logic. <br> - **Project:** <br> &nbsp;&nbsp;+ Building an algorithm to suppress repeated SNS alerts based on time-status queries from DynamoDB. | 04/21/2026 | 04/21/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
+| 3 | - Research: Athena DDL commands for partition synchronization. <br> - **Project:** <br> &nbsp;&nbsp;+ S3 Storage Upgrade: Deploying Hive Partitioning (year/month/day/appid). | 04/22/2026 | 04/22/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
+| 4 | - **Project:** <br> &nbsp;&nbsp;+ API Endpoint Analysis: Reviewing the integration flow between HTTP API Gateway and Lambda for Client Dashboard. | 04/23/2026 | 04/23/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
+| 5 | - **Project:** <br> &nbsp;&nbsp;+ Core Storage Infrastructure Deployment: Configuring S3 Lifecycle Rules and DynamoDB tables with TTL. <br> &nbsp;&nbsp;+ SQS and Lambda Integration: Establishing IAM Roles for system integration. | 04/24/2026 | 04/24/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
 
 ### Key Achievements in Week 7:
 
@@ -41,9 +38,7 @@ pre: " <b> 1.7. </b> "
 #### 4. Infrastructure Deployment & Integration
 * Successfully deployed and connected event flows between core services (SQS, Lambda, S3, DynamoDB, SNS) through the configuration of strict and secure IAM Role policies.
 
+### Knowledge Gained:
 
-
-### Accumulated Knowledge:
-
-* **Technical Skills:** Gained a deep understanding of the differences between synchronous and asynchronous architectures in log processing. Mastered Hive data partitioning techniques for handling Big Data on the Cloud platform.
+* **Technical Expertise:** Gained a deep understanding of the differences between synchronous and asynchronous architectures in log processing. Mastered Hive data partitioning techniques for handling Big Data on the Cloud platform.
 * **Soft Skills:** Developed advanced Python source code analysis capabilities. Honed an architectural optimization mindset to meet real-world performance and cost requirements.
