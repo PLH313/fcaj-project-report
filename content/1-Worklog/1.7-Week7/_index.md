@@ -16,11 +16,11 @@ pre: " <b> 1.7. </b> "
 
 | No. | Task | Start Date | End Date | Resource |
 | :--- | :--- | :---: | :---: | :--- |
-| 1 | - **Project:** <br> &nbsp;&nbsp;+ Data Routing Refactoring: Analyzing and transitioning the data flow to use SQS FIFO as a processing buffer. | 04/20/2026 | 04/20/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
-| 2 | - Research: Alert Debounce Logic. <br> - **Project:** <br> &nbsp;&nbsp;+ Building an algorithm to suppress repeated SNS alerts based on time-status queries from DynamoDB. | 04/21/2026 | 04/21/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
-| 3 | - Research: Athena DDL commands for partition synchronization. <br> - **Project:** <br> &nbsp;&nbsp;+ S3 Storage Upgrade: Deploying Hive Partitioning (year/month/day/appid). | 04/22/2026 | 04/22/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
-| 4 | - **Project:** <br> &nbsp;&nbsp;+ API Endpoint Analysis: Reviewing the integration flow between HTTP API Gateway and Lambda for Client Dashboard. | 04/23/2026 | 04/23/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
-| 5 | - **Project:** <br> &nbsp;&nbsp;+ Core Storage Infrastructure Deployment: Configuring S3 Lifecycle Rules and DynamoDB tables with TTL. <br> &nbsp;&nbsp;+ SQS and Lambda Integration: Establishing IAM Roles for system integration. | 04/24/2026 | 04/24/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com) |
+| 1 | - Research: Data Routing architecture and advantages of SQS FIFO in ensuring data ordering. <br> - **Project:** <br> &nbsp;&nbsp;+ Transition data flow to use SQS FIFO as a central processing buffer. | 04/20/2026 | 04/20/2026 | [AWS Documentation](https://docs.aws.amazon.com) |
+| 2 | - Research: Alert Debounce logic and controlling alert states based on timestamps. <br> - **Project:** <br> &nbsp;&nbsp;+ Build an algorithm to suppress repeated SNS alerts based on time-status queries from DynamoDB. | 04/21/2026 | 04/21/2026 | [AWS Documentation](https://docs.aws.amazon.com) |
+| 3 | - Research: Hive Partitioning mechanisms and advanced DDL commands in Amazon Athena. <br> - **Project:** <br> &nbsp;&nbsp;+ S3 Storage Upgrade: Deploy Hive Partitioning (year/month/day/appid). <br> &nbsp;&nbsp;+ Synchronize data partitions using Athena. | 04/22/2026 | 04/22/2026 | [AWS Documentation](https://docs.aws.amazon.com) |
+| 4 | - Research: Lambda integration with HTTP API Gateway and authentication for Client Dashboard. <br> - **Project:** <br> &nbsp;&nbsp;+ Review integration flow between API Gateway and Lambda for data retrieval. | 04/23/2026 | 04/23/2026 | [AWS Documentation](https://docs.aws.amazon.com) |
+| 5 | - Research: DynamoDB Time to Live (TTL) and S3 Lifecycle Management. <br> - **Project:** <br> &nbsp;&nbsp;+ Configure S3 Lifecycle Rules; create DynamoDB tables with TTL mechanism. <br> &nbsp;&nbsp;+ Package Python source code and set up SQS as an Event Trigger for Lambda. | 04/24/2026 | 04/24/2026 | [AWS Documentation](https://docs.aws.amazon.com) |
 
 ### Key Achievements in Week 7:
 
