@@ -12,7 +12,7 @@ chapter: false
 
 &emsp; **Số điện thoại:** 0373127085
 
-&emsp; **Email:** hoangle0301@gmai.com
+&emsp; **Email:** hoangle0301@gmail.com
 
 &emsp; **Trường:** Trường Đại học Sài Gòn
 
