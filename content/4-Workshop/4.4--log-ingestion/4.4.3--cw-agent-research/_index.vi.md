@@ -1,55 +1,59 @@
 ---
-title : "Nghiên cứu kết nối qua CloudWatch Agent"
-date : 2026-05-02
-weight : 3
-chapter : false
-pre : " <b> 4.4.3 </b> "
+title: "Nghiên cứu CloudWatch Agent"
+date: 2026-05-02
+weight: 3
+chapter: false
+pre: "<b> 4.4.3 </b>"
 ---
 
-#### Lấy regional DNS name (tên DNS khu vực) của S3 interface endpoint
-1. Trong Amazon VPC menu, chọn Endpoints.
+## 4.4.3 Nghiên cứu CloudWatch Agent
 
-2. Click tên của endpoint chúng ta mới tạo ở mục 4.2: s3-interface-endpoint. Click details và lưu lại regional DNS name của endpoint (cái đầu tiên) vào text-editor của bạn để dùng ở các bước sau.
+### Mục tiêu
 
-![dns name](/images/5-Workshop/5.4-S3-onprem/dns.png)
+Tìm hiểu CloudWatch Agent và cách sử dụng để thu thập log từ hệ thống thực tế, từ đó mở rộng khả năng ingest dữ liệu cho pipeline.
 
-#### Kết nối đến EC2 instance ở trong "VPC On-prem" (giả lập môi trường truyền thống)
+---
 
-1. Đi đến **Session manager** bằng cách gõ "session manager" vào ô tìm kiếm
+### Tổng quan
 
-2. Click **Start Session**, chọn EC2 instance có tên **Test-Interface-Endpoint**. EC2 instance này đang chạy trên "VPC On-prem" và sẽ được sử dụng để kiểm tra kết nối đến Amazon S3 thông qua Interface endpoint. Session Manager sẽ mở 1 browser tab mới với shell prompt: **sh-4.2 $**
+CloudWatch Agent là một công cụ do AWS cung cấp, cho phép thu thập log và metric từ các máy chủ (EC2 hoặc on-premise) và gửi trực tiếp lên CloudWatch.
 
-![Start session](/images/5-Workshop/5.4-S3-onprem/start-session.png)
+Khác với việc tạo log thủ công trong CloudWatch, CloudWatch Agent giúp tự động hóa quá trình thu thập log từ hệ thống, đặc biệt hữu ích trong môi trường production.
 
-3. Đi đến ssm-user's home directory với lệnh "cd ~"
+---
 
-4. Tạo 1 file tên testfile2.xyz
-```
-fallocate -l 1G testfile2.xyz
-```
+### Cách hoạt động
 
-![user](/images/5-Workshop/5.4-S3-onprem/cli1.png)
+Quy trình hoạt động của CloudWatch Agent bao gồm:
 
-5. Copy file vào S3 bucket mình tạo ở section 4.2
-```
-aws s3 cp --endpoint-url https://bucket.<Regional-DNS-Name> testfile2.xyz s3://<your-bucket-name>
-``` 
-+ Câu lệnh này yêu cầu thông số --endpoint-url, bởi vì bạn cần sử dụng DNS name chỉ định cho endpoint để truy cập vào S3 thông qua Interface endpoint.
-+ Không lấy ' * ' khi copy/paste tên DNS khu vực.
-+ Cung cấp tên S3 bucket của bạn
+- Cài đặt CloudWatch Agent trên máy chủ (EC2)  
+- Cấu hình file agent (JSON hoặc wizard) để xác định log cần thu thập  
+- Agent đọc log từ hệ thống (ví dụ: `/var/log/...`)  
+- Gửi log lên CloudWatch Logs  
+- Từ CloudWatch, log tiếp tục đi vào pipeline xử lý (Lambda Shipper → SQS → Lambda Processor)  
 
-![copy file](/images/5-Workshop/5.4-S3-onprem/cli2.png)
+---
 
-Bây giờ tệp đã được thêm vào bộ chứa S3 của bạn. Hãy kiểm tra bộ chứa S3 của bạn trong bước tiếp theo.
+### Ứng dụng trong hệ thống
 
-#### Kiểm tra Object trong S3 bucket
+Trong hệ thống này, CloudWatch Agent có thể được sử dụng để:
 
-1. Đi đến S3 console
-2. Click Buckets
-3. Click tên bucket của bạn và bạn sẽ thấy testfile2.xyz đã được thêm vào s3 bucket của bạn
+- Thu thập log thực tế từ ứng dụng chạy trên EC2  
+- Tự động gửi log lên CloudWatch mà không cần thao tác thủ công  
+- Kết nối trực tiếp với pipeline ingest đã xây dựng ở phần 4.4  
 
-![check bucket](/images/5-Workshop/5.4-S3-onprem/check-bucket.png)
+---
 
+### So sánh với cách ingest hiện tại
 
+| Tiêu chí | Log thủ công | CloudWatch Agent |
+|----------|-------------|------------------|
+| Cách tạo log | Tạo test event | Tự động từ hệ thống |
+| Tính tự động | Thấp | Cao |
+| Ứng dụng thực tế | Hạn chế | Phù hợp production |
 
+---
 
+### Kết luận
+
+CloudWatch Agent giúp tự động hóa quá trình thu thập log và mở rộng hệ thống ingest từ môi trường thử nghiệm sang môi trường thực tế. Đây là một thành phần quan trọng để xây dựng hệ thống giám sát và xử lý log hoàn chỉnh.

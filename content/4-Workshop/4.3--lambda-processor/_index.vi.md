@@ -1,18 +1,29 @@
 ---
-title: "Luồng xử lý SQS & Lambda Processor"
+title: "Lambda Processor"
 date: 2026-05-02
 weight: 3
 chapter: false
-pre: " <b> 4.3. </b> "
+pre: "<b> 4.3 </b>"
 ---
 
-#### Sử dụng Gateway endpoint
+## Tổng quan
 
-Trong phần này, bạn sẽ tạo một Gateway endpoint để truy cập Amazon S3 từ một EC2 instance. Gateway endpoint sẽ cho phép tải một object lên S3 bucket mà không cần sử dụng Internet Công cộng. Để tạo endpoint, bạn phải chỉ định VPC mà bạn muốn tạo endpoint và dịch vụ (trong trường hợp này là S3) mà bạn muốn thiết lập kết nối.
+Trong hệ thống giám sát log, việc xử lý dữ liệu theo thời gian thực đóng vai trò quan trọng nhằm phát hiện sớm các sự cố. Do đó, phần này tập trung xây dựng một pipeline xử lý log sử dụng SQS và Lambda.
 
-![overview](/images/5-Workshop/5.3-S3-vpc/diagram2.png)
 
-#### Nội dung
+## Kiến trúc tổng quát
+  SQS -> Lambda -> (DynamoDB / S3 / SNS)
 
-- [Tạo gateway endpoint](3.1-create-gwe/)
-- [Test gateway endpoint](3.2-test-gwe/)
+## Mô tả kiến trúc
+
+Trong kiến trúc này, SQS đóng vai trò là hàng đợi trung gian tiếp nhận các message log. Khi có message mới, Lambda Processor sẽ được kích hoạt tự động để xử lý dữ liệu. Sau đó, dữ liệu được lưu trữ vào DynamoDB, S3 và đồng thời gửi thông báo thông qua SNS.
+
+## Vai trò của Lambda Processor
+
+- Nhận message từ SQS  
+- Xử lý dữ liệu log  
+- Lưu trữ dữ liệu và gửi thông báo  
+
+## Kết quả
+
+Hệ thống xử lý log hoạt động xuyên suốt (end-to-end), đảm bảo dữ liệu được tiếp nhận, xử lý và lưu trữ đầy đủ.
