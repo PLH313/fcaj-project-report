@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 4.5. </b> "
 ---
 
-## 4.5. User Registration System  
+## User Registration System  
 
 ### Contents:
 1. [Check registration portal infrastructure](4.5.1--resource-check/)
