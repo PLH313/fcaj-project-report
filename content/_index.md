@@ -12,7 +12,7 @@ chapter: false
 
 &emsp; **Phone Number:** 0373127085
 
-&emsp; **Email:** hoangle0301@gmai.com
+&emsp; **Email:** hoangle0301@gmail.com
 
 &emsp; **University:** Saigon University
 
