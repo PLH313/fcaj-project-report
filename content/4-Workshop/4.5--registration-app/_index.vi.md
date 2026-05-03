@@ -19,7 +19,7 @@ Cung cấp một cơ chế an toàn và tập trung để đăng ký ứng dụn
 ### Kiến trúc
 Hệ thống đăng ký được xây dựng trên **Amazon Cognito, IAM, ECS và DynamoDB**.
 
-- **Cognito** quản lý việc đăng ký và xác thực người dùng.
+- **Amazon Cognito** quản lý việc đăng ký và xác thực người dùng.
 
 - **IAM** thực thi quyền truy cập dựa trên vai trò và tạo ra các khóa truy cập an toàn.
 
