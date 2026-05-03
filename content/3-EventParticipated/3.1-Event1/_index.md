@@ -96,10 +96,10 @@ Participating in the event was an inspiring journey that completely reshaped my 
 - Technology moves very fast; maintaining a spirit of continuous learning and building supportive communities (like FCAJ) is the key to survival in the Cloud industry.
 
 #### Event Gallery
-![GoTymeX 1](/images/event_img1.jpg)
-![GoTymeX 2](/images/event_img2.jpg)
-![GenAIOps Essential](/images/event_img3.jpg)
-![Shipping Code Agentic Era](/images/event_img4.jpg)
-![Multimodal GenAI](/images/event_img5.jpg)
+![GoTymeX 1](/images/3-EventParticipated/3.1-Event1/event_img1.jpg)
+![GoTymeX 2](/images/3-EventParticipated/3.1-Event1/event_img2.jpg)
+![GenAIOps Essential](/images/3-EventParticipated/3.1-Event1/event_img3.jpg)
+![Shipping Code Agentic Era](/images/3-EventParticipated/3.1-Event1/event_img4.jpg)
+![Multimodal GenAI](/images/3-EventParticipated/3.1-Event1/event_img5.jpg)
 
 > **Summary:** "AWS First Cloud AI Journey Community Day 2026" did more than just update technical knowledge; it served as a launchpad to help me clearly define the path toward modernizing infrastructure and applying AI to actual production.
