@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-Trang nhật ký này ghi chép lại toàn bộ hành trình trải nghiệm và học tập qua dự án (project-based learning) tại chương trình thực tập **Workforce Bootcamp - First Cloud AI Journey (FCAJ)**. 
+Trang nhật ký này ghi chép lại toàn bộ hành trình trải nghiệm và học tập tại chương trình thực tập **Workforce Bootcamp - First Cloud AI Journey (FCAJ)**. 
 
 Quá trình thực tập được triển khai trong vòng **8 tuần**, đánh dấu sự phát triển từ những bước đầu làm quen với hệ sinh thái AWS cho đến việc trực tiếp triển khai hạ tầng dự án "Hệ thống quản lý Log" nâng cao.
 
