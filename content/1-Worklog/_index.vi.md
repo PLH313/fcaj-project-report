@@ -8,7 +8,7 @@ pre: " <b> 1. </b> "
 
 Trang nhật ký này ghi chép lại toàn bộ hành trình trải nghiệm và học tập tại chương trình thực tập **Workforce Bootcamp - First Cloud AI Journey (FCAJ)**. 
 
-Quá trình thực tập được triển khai trong vòng **8 tuần**, đánh dấu sự phát triển từ những bước đầu làm quen với hệ sinh thái AWS cho đến việc trực tiếp triển khai hạ tầng dự án "Hệ thống quản lý Log" nâng cao.
+Quá trình thực tập được triển khai trong vòng **8 tuần**, đánh dấu sự phát triển từ những bước đầu làm quen với hệ sinh thái AWS cho đến việc trực tiếp triển khai hạ tầng dự án "Hệ thống quản lý Log".
 
 **Tuần 1:** [Thiết lập nền tảng, quản lý chi phí, bảo mật IAM, cấu hình mạng VPC, EC2 và Cloud9](1.1-week1/)
 
