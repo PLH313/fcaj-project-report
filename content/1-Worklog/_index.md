@@ -8,7 +8,7 @@ pre: " <b> 1. </b> "
 
 This worklog records my entire learning journey during the **Workforce Bootcamp - First Cloud AI Journey (FCAJ)** internship program.
 
-The internship was conducted over **8 weeks**, marking my progression from initial AWS ecosystem familiarization to directly deploying the advanced "Log Management System" infrastructure.
+The internship was conducted over **8 weeks**, marking my progression from initial AWS ecosystem familiarization to directly deploying the "Log Management System" infrastructure.
 
 **Week 1:** [Foundation Setup: Cost Management, IAM Security, VPC Networking, EC2, and Cloud9](1.1-week1/)
 
