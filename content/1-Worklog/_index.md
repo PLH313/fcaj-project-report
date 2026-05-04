@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-This worklog records my entire journey of project-based learning during the **Workforce Bootcamp - First Cloud AI Journey (FCAJ)** internship program.
+This worklog records my entire learning journey during the **Workforce Bootcamp - First Cloud AI Journey (FCAJ)** internship program.
 
 The internship was conducted over **8 weeks**, marking my progression from initial AWS ecosystem familiarization to directly deploying the advanced "Log Management System" infrastructure.
 
